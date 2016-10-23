@@ -47,7 +47,7 @@ Due to the very incomplete and sparse data with only true positive cases provide
 
 Webapp developed using:
 
-[![alt text](http://www.jmbanda.com/Meteor.png)](https://www.meteor.com/) 
+[![alt text](http://www.jmbanda.com/meteor-logo.png)](https://www.meteor.com/) 
 [![alt text](http://www.jmbanda.com/angular_js.png)](https://angularjs.org/)
 [![alt text](http://www.jmbanda.com/mongodb.png)](https://www.mongodb.com/)
 [![alt text](http://www.jmbanda.com/php2.jpg)](https://secure.php.net/)
