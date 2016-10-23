@@ -69,7 +69,7 @@
     //echo "Sentiment Scores - Negative: " . $scores[neg] . " - Neutral: " . $scores[neu] . " - Positive: " . $scores[pos] . "\n";
     
 
-    $em_message="Emergency Word: ".$emergencyWord.", Person Location: ". $addNumber ." ". $streetAdd . " Sentiment Scores - Negative: " . $scores[neg] . " - Neutral: " . $scores[neu] . " - Positive: " . $scores[pos] . " - From: " .$sms_from;
+    $em_message="Urgency Keyword: ".$emergencyWord.", Location: ". $addNumber ." ". $streetAdd . " Sentiment: Negative: " . $scores[neg] . " - Neutral: " . $scores[neu] . " - Positive: " . $scores[pos] . " - From: " .$sms_from;
 
     //Twillio send SMS to list of coordinators
     $client = new Client($AccountSid, $AuthToken);
