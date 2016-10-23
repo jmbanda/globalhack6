@@ -21,7 +21,7 @@ In case of extreme emergencies (weather or other) we provide facilities for peop
 2. The location provided by the person (street, or street and number) - we have added all streets in St. Louis for instant recognition
 3. The most relevant 'emergency' keyword
 
-A sample emergency SMS can be: ** Freezing to death, very cold, need help 151 Chippewa St. **
+A sample emergency SMS can be: **Freezing to death, very cold, need help 151 Chippewa St.**
 
 The emergency shelter system will send a response SMS, provide an alert on the case management system and SMS one of the persons on call for addressing the situation. Our system will keep track of all cases and will recognize existing phone numbers
 
@@ -34,7 +34,7 @@ Instead of having people show up to a shelter that is full or closed, we provide
 3. Age group
 4. Number of people with the person
 
-A sample Shelter bed request SMS can be: ** I am Female, Veteran and youth with 3 people **
+A sample Shelter bed request SMS can be: **I am Female, Veteran and youth with 3 people**
 
 
 
