@@ -8,7 +8,7 @@
 
 ##iv. App tagline: Cura: Care for people in distress when they need it the most
 
-##v. App description (should be approximately 500 words);
+##v. App description:
 
 
 
@@ -51,6 +51,7 @@ Webapp developed using:
 [![alt text](http://www.jmbanda.com/angular_js.png)](https://angularjs.org/)
 [![alt text](http://www.jmbanda.com/mongodb.png)](https://www.mongodb.com/)
 [![alt text](http://www.jmbanda.com/php2.jpg)](https://secure.php.net/)
+[![alt text](http://www.jmbanda.com/google-maps.jpg)](https://www.google.com/maps)
 
 Web styling:
 
