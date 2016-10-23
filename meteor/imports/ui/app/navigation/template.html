@@ -1,0 +1,61 @@
+<nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0">
+	<div class="notifyMeContainer" id="notifyMeContainer-topRight" style="top: 50px; right: 10px;">
+		<div class="notification error" ng-repeat="emergency in nav.emergencies">
+			<h4 class="notifyMeTitle">{{emergency.client.name || emergency.number}} needs immediate help!</h4>
+			<p class="notifyMeText">{{emergency.message}}</p>
+			<div class="text-center">
+				<a class="btn btn-primary" ng-click="nav.pick(emergency)">Pick</a>
+				<a class="btn btn-default" ng-click="nav.ignore(emergency)">Ignore</a>
+			</div>
+		</div>
+	</div>
+	<div class="navbar-header">
+		<a class="navbar-toggle" toggle="collapse" target=".navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</a>
+		<a class="navbar-brand" ui-sref="app.dashboard">Cura</a>
+	</div>
+
+	<ul class="nav navbar-top-links navbar-right">
+		<li class="dropdown" uib-dropdown="">
+			<a class="dropdown-toggle" uib-dropdown-toggle="" style="cursor: pointer">
+				<i class="fa fa-fw fa-user"></i> {{nav.currentUser.profile.name}} <i class="fa fa-caret-down"></i>
+			</a>
+			<ul class="dropdown-menu dropdown-user" uib-dropdown-menu="">
+				<li><a ng-click="nav.logout()"><i class="fa fa-fw fa-sign-out"></i> Logout</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<div class="navbar-default sidebar">
+		<div class="logo"><img src="assets/cura.svg" alt=""></div>
+		<div class="sidebar-nav navbar-collapse">
+			<ul class="nav" id="side-menu">
+				<li ui-sref-active="active">
+					<a ui-sref="app.dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+				</li>
+				<li ui-sref-active="active">
+					<a ui-sref="app.hotline-emergencies.index">
+						<i class="fa fa-fw fa-phone"></i> Hotline Emergencies
+						<i class="fa fa-exclamation-triangle pull-right" style="color: red" ng-if="nav.emergenciesCounter.count>0"></i>
+					</a>
+				</li>
+				<li ui-sref-active="active">
+					<a ui-sref="app.clients.index"><i class="fa fa-fw fa-user"></i> Clients</a>
+				</li>
+				<li ui-sref-active="active">
+					<a ui-sref="app.programs.index"><i class="fa fa-fw fa-life-ring"></i> Programs</a>
+				</li>
+				<li ui-sref-active="active">
+					<a ui-sref="app.beds.index"><i class="fa fa-fw fa-bed"></i> Beds</a>
+				</li>
+				<li ui-sref-active="active">
+					<a ui-sref="app.users.index"><i class="fa fa-fw fa-users"></i> Users</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

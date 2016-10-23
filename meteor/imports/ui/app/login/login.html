@@ -1,0 +1,24 @@
+<div id="login__ctn"><div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+			<div class="panel panel-default" style="margin-top: 25%;">
+				<div class="panel-heading">
+					<img src="assets/cura.svg">
+					<!-- <h2 style="margin: 0; padding: 0">Welcome!</h2> -->
+				</div>
+				<div class="panel-body">
+					<form name="form" ng-submit="l.login()">
+						<div class="form-group" ng-class="{'has-error': form.username.$invalid}">
+							<input type="text" name="username" ng-model="l.username" class="form-control" placeholder="Username" required autofocus />
+						</div>
+						<div class="form-group" ng-class="{'has-error': form.password.$invalid}">
+							<input type="password" name="password" ng-model="l.password" class="form-control" placeholder="Password" required />
+						</div>
+
+						<button type="submit" class="btn btn-lg btn-success btn-block" ng-disabled="form.$invalid">Login</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>

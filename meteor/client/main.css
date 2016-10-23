@@ -1,0 +1,135 @@
+/* Some admin helpers */
+
+.header, .marketing, .footer {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.header {
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.header h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 40px;
+	padding-bottom: 19px;
+}
+
+.footer {
+	padding-top: 19px;
+	color: #777;
+	border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+	margin: 30px 0;
+}
+
+.jumbotron {
+	text-align: center;
+	border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+	font-size: 21px;
+	padding: 14px 24px;
+}
+
+.marketing {
+	margin: 40px 0;
+}
+.marketing p + h4 {
+	margin-top: 28px;
+}
+
+@media screen and (min-width: 768px) {
+	.header, .marketing, .footer {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.header {
+		margin-bottom: 30px;
+	}
+
+	.jumbotron {
+		border-bottom: 0;
+	}
+
+	.container {
+		max-width: 970px;
+	}
+}
+
+.nav>li.active>a {
+	text-decoration: none;
+	background-color: #eee;
+}
+
+[ng-click] {
+	cursor: pointer;
+}
+
+.btn-file {
+	position: relative;
+	overflow: hidden;
+}
+
+.btn-file input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	font-size: 100px;
+	text-align: right;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	cursor: inherit;
+	display: block;
+}
+
+.ta-editor {
+	min-height: 300px;
+	height: auto;
+	overflow: auto;
+	font-family: inherit;
+	font-size: 100%;
+}
+
+.lease-process {
+	margin: 20px 0;
+}
+
+.lease-process .fa {
+	font-size: 40px;
+}
+
+/* We use font-awesome instead of glyphicon, but ui-bootstrap uses glyphicons. This is the workaround */
+.glyphicon {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-ok:before {
+	content: "\f00c";
+}
+
+.glyphicon-remove:before {
+	content: "\f00d";
+}
+
+.glyphicon-chevron-left:before {
+	content: "\f053";
+}
+
+.glyphicon-chevron-right:before {
+	content: "\f054";
+}

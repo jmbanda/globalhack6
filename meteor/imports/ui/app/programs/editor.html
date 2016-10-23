@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col-sm-12">
+		<h1 class="page-header">{{c.client._id? 'Edit':'Register'}} program</h1>
+	</div>
+</div>
+<div ng-form="form">
+	<div class="row">
+		<div class="from-group col-md-6" ng-class="{'has-error': form.name.$invalid}">
+			<label class="control-label">Program name</label>
+			<input type="text" name="name" class="form-control" ng-model="p.program.name" required autofocus />
+		</div>
+		<div class="from-group col-md-6" ng-class="{'has-error': form.address.$invalid}">
+			<label class="control-label">Address</label>
+			<input type="text" name="address" class="form-control" ng-model="p.program.address" required />
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-md-12 text-right" ng-hide="p.loading">
+			<button type="button" class="btn btn-primary" ng-disabled="form.$invalid" ng-click="p.save()">Save</button>
+			<a class="btn btn-default" ng-click="p.cancel()">Cancel</a>
+		</div>
+		<div class="form-group col-md-12 text-center" ng-show="p.loading">
+			Loading <i class="fa fa-spin fa-spinner"></i>
+		</div>
+	</div>
+</div>

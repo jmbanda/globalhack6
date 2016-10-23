@@ -1,0 +1,59 @@
+<div class="row">
+	<div class="col-sm-12">
+		<h1 class="page-header">{{c.client._id? 'Edit':'Register'}} Client</h1>
+	</div>
+</div>
+<div ng-form="form">
+	<h3>General Data</h3>
+	<div class="row">
+		<div class="from-group col-md-3" ng-class="{'has-error': form.firstName.$invalid}">
+			<label class="control-label">First Name</label>
+			<input type="text" name="firstName" class="form-control" ng-model="c.client.firstName" required autofocus />
+		</div>
+		<div class="from-group col-md-3">
+			<label class="control-label">Middle Name</label>
+			<input type="text" name="middleName" class="form-control" ng-model="c.client.middleName" />
+		</div>
+		<div class="from-group col-md-3" ng-class="{'has-error': form.lastName.$invalid}">
+			<label class="control-label">Last Name</label>
+			<input type="text" name="lastName" class="form-control" ng-model="c.client.lastName" required />
+		</div>
+		<div class="form-group col-md-3" ng-class="{'has-error': form.nameDataQuality.$invalid}">
+			<label class="control-label">Name Data Quality</label>
+			<input type="number" name="nameDataQuality" class="form-control" ng-model="c.client.nameDataQuality" required />
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-md-3" ng-class="{'has-error': form.ssn.$inavlid}">
+			<label class="control-label">SSN</label>
+			<input type="text" name="ssn" class="form-control" ng-model="c.client.ssn" />
+		</div>
+		<div class="form-group col-md-3" ng-class="{'has-error': form.ssnDataQuality.$invalid}">
+			<label class="control-label">SSN Data Quality</label>
+			<input type="number" name="ssnDataQuality" class="form-control" ng-model="c.client.ssnDataQuality" required />
+		</div>
+		<div class="form-group col-md-3" ng-class="{'has-error': form.dateOfBirth.$invalid}">
+			<label class="control-label">Date of Birth</label>
+			<input type="date" name="dateOfBirth" class="form-control" ng-model="c.client.dateOfBirth" />
+		</div>
+		<div class="form-group col-md-3" ng-class="{'has-error': form.dobQuality.$invalid}">
+			<label class="control-label">DOB Data Quality</label>
+			<input type="number" name="dobQuality" class="form-control" ng-model="c.client.dobQuality" required />
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-md-3">
+			<label class="control-label">Phone Number</label>
+			<input type="text" name="phoneNumber" class="form-control" ng-model="c.client.phoneNumber" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-md-12 text-right" ng-hide="c.loading">
+			<button type="button" class="btn btn-primary" ng-disabled="form.$invalid" ng-click="c.save()">Save</button>
+			<a class="btn btn-default" ng-click="c.cancel()">Cancel</a>
+		</div>
+		<div class="form-group col-md-12 text-center" ng-show="c.loading">
+			Loading <i class="fa fa-spin fa-spinner"></i>
+		</div>
+	</div>
+</div>

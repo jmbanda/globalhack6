@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="222px" height="87px" viewBox="0 0 222 87" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>cura</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M133.101639,27.1577134 L139.804688,26.5371094 L109,2 L83.8500004,21.9910253 L83.8500004,27.9910253 L109,8 L133.101639,27.1577134 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+        <text id="CU" font-family="OpenSans, Open Sans" font-size="64" font-weight="normal" letter-spacing="8" fill="#FFFFFF">
+            <tspan x="0" y="68">CU</tspan>
+        </text>
+        <text id="RA" font-family="OpenSans, Open Sans" font-size="64" font-weight="normal" letter-spacing="8" fill="#FFFFFF">
+            <tspan x="125" y="68">RA</tspan>
+        </text>
+        <rect id="Rectangle-2" fill="#FFFFFF" x="73" y="64" width="63" height="4"></rect>
+        <g id="Group" transform="translate(100.000000, 27.000000)" fill="#FFFFFF">
+            <rect id="Rectangle-3" x="0" y="0" width="8" height="8"></rect>
+            <rect id="Rectangle-3" x="0" y="10" width="8" height="8"></rect>
+            <rect id="Rectangle-3" x="10" y="0" width="8" height="8"></rect>
+            <rect id="Rectangle-3" x="10" y="10" width="8" height="8"></rect>
+        </g>
+    </g>
+</svg>

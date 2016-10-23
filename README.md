@@ -1,6 +1,6 @@
 # GlobalHack VI - Team Cura
 
-##i. Application: Cura
+##i. Application: Cura 
 
 ##ii. Division: Professional
 

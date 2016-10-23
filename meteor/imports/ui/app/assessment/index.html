@@ -1,0 +1,92 @@
+<div id="assessment__ctn"><div class="assessment__inner"><div class="container">
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h2 style="margin: 0; padding: 0">Homelessness Risk Assessment</h2>
+					<p>If you believe your are in risk of becoming homeless for any reason at all, please fill out the form below and let us know, and we will contact you with preventative assistance.</p>
+				</div>
+				<div class="panel-body">
+					<form name="form" class="form-horizontal" ng-submit="a.submit()">
+						<div class="form-group" ng-class="{'has-error': form.firstName.$invalid}">
+							<label class="control-label col-sm-4">First name</label>
+							<div class="col-sm-8">
+								<input type="text" name="firstName" ng-model="a.assessment.firstName" class="form-control" required autofocus />
+							</div>
+						</div>
+						<div class="form-group" ng-class="{'has-error': form.lastName.$invalid}">
+							<label class="control-label col-sm-4">Last name</label>
+							<div class="col-sm-8">
+								<input type="text" name="lastName" ng-model="a.assessment.lastName" class="form-control" required />
+							</div>
+						</div>
+						<div class="form-group" ng-class="{'has-error': form.ssn.$invalid}">
+							<label class="control-label col-sm-4">SSN</label>
+							<div class="col-sm-8">
+								<input type="text" name="ssn" ng-model="a.assessment.ssn" class="form-control" required />
+							</div>
+						</div>
+						<div class="form-group" ng-class="{'has-error': form.dateOfBirth.$invalid}">
+							<label class="control-label col-sm-4">Date of birth</label>
+							<div class="col-sm-8">
+								<input type="date" name="dateOfBirth" ng-model="a.assessment.dateOfBirth" class="form-control" required />
+							</div>
+						</div>
+						<div class="form-group" ng-class="{'has-error': form.employed.$invalid}">
+							<label class="control-label col-sm-4">Are you currently employed?</label>
+							<div class="col-sm-8">
+								<select name="employed" class="form-control" ng-model="a.assessment.employed" ng-options="o.v as o.l for o in [{v:true,l:'Yes'},{v:false,l:'No'}]" required></select>
+							</div>
+						</div>
+						<div class="form-group" ng-class="{'has-error': form.income.$invalid}" ng-if="a.assessment.employed">
+							<label class="control-label col-sm-4">Income</label>
+							<div class="col-sm-8">
+								<input type="number" name="income" class="form-control" ng-model="a.assessment.income" required />
+							</div>
+						</div>
+						<div class="form-group" ng-class="{'has-error': form.expenses.$invalid}" ng-if="a.assessment.employed">
+							<label class="control-label col-sm-4">Expenses</label>
+							<div class="col-sm-8">
+								<input type="number" name="expenses" class="form-control" ng-model="a.assessment.expenses" required />
+							</div>
+						</div>
+						<div class="form-group" ng-class="{'has-error': form.family.$invalid}">
+							<label class="control-label col-sm-4">Are you a family?</label>
+							<div class="col-sm-8">
+								<select name="family" class="form-control" ng-model="a.assessment.family" ng-options="o.v as o.l for o in [{v:true,l:'Yes'},{v:false,l:'No'}]" required></select>
+							</div>
+						</div>
+						<div class="form-group" ng-class="{'has-error': form.familyMembers.$invalid}" ng-if="a.assessment.family">
+							<label class="control-label col-sm-4">Family members</label>
+							<div class="col-sm-8">
+								<input type="number" name="familyMembers" class="form-control" ng-model="a.assessment.familyMembers" required />
+							</div>
+						</div>
+						<div class="form-group" ng-class="{'has-error': form.educationLevel.$invalid}">
+							<label class="control-label col-sm-4">Highest education level</label>
+							<div class="col-sm-8">
+								<select name="educationLevel" class="form-control" ng-model="a.assessment.educationLevel" required>
+									<option>Primary</option>
+									<option>Junior high</option>
+									<option>Highschool</option>
+									<option>Undergrad</option>
+									<option>Masters</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group" ng-class="{'has-error': form.message.$invalid}">
+							<label class="control-label col-sm-4">Message</label>
+							<div class="col-sm-8">
+								<textarea name="message" class="form-control" ng-model="a.assessment.message" required></textarea>
+							</div>
+						</div>
+
+						<div class="form-group text-center">
+							<button type="submit" class="btn btn-lg btn-success" ng-disabled="form.$invalid">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div></div>
