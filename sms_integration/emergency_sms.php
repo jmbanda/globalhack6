@@ -1,6 +1,6 @@
 <?php
     //Twillio Stuff
-    require_once "twilio/autoload.php";
+    require __DIR__ . '/twilio/Twilio/autoload.php';
     use Twilio\Rest\Client;
     $AccountSid = "ACd11e97442b5ac5f299dc8072ded484aa";
     $AuthToken = "03304b5dccdff25332b33c86394056f1";
@@ -21,6 +21,7 @@
     $emergencyWords= array('help','emergency','accident','crunch','difficult','necessity','tension','climax','clutch','compulsion','crossroad','depression','distress','exigency','extremity','fix','hole','impasse','juncture','meltdown','misadventure','pass','pinch','plight','predicament','pressure','push','quandary','scrape','squeeze','strait','urgency','vicissitude');
     $stLouisStreets= array('Aberdeen','Abner','Acme','Adelia','Adkins','Adrian','Alabama','Alamo','Albertine','Al-Clare','Alcott','Alexander','Amelia','Anna','Archwood','Arlington','Arsenal','Arundel','Ashland','Balson','Bartmer','Beacon','BeltAve.','Benvenue','Bertha','Berthold','Bircher','Bisque','Blackstone','Bleeck','Blendon','Blendon','Bluff','Bluffvlew','Brennan','Broadway ï South','Broadway ï North','Brown','Bruno','Buena Vista','Burd','Byron','Cabanne','Canterbury','Carlsbad','Carondelet','Carondelet','Chain','Chain of Rocks','Chambers','Chevrolet','Chippewa','Church','Clara','Claxton','Clayton','Clayton','Clemens','Clymer','Coal Bank','Cockrill','Commonwealth30ï 80','Comstock','Comstock','Cote Brilliante','Courtois','Creighton','Crosby','Dale','Damato','Damon','Darby','Dardenne','Davis','Davison','Decatur','Delmar','Devonshire','Dischinger','Donnell','Dressell','Dr. Martin L. King6100ï 61','Dunn','Eastgate','Ecoff','Edelle','Edna','Eichelberger','Ella','Ellendale','Ellendale','Elmbank','Emerson','Emilie','Emma','Enright','Era','Esplanade','Ethel','Etzel','Etzel Tr.','Fannie','Fauquier','Fern','Ferris','Fifth','Florissant','Floy','Forsyth','Frederick','Garesche','Garesche','Gast','Gateland','Genevieve','Gilmore','Glades','Glasgow','Glenmore','Goodfellow','Goodfellow','Gravois','Greer','Grimshaw','Hamburg','Hamilton','Harney','Harney','Hazel','Healy','Hebert','Henner','Hermitage','Hewitt','Highland','Hildesheim','Hiller','Hi Pointe','Hodiamont','Holly Hills','Horner','Horton','Howell','ltaska','Jeffrey','Johanna','Jordan','Kammerer','Kennerly','Ketmore','Kettler','Kimberly','Kingwood','Kuhs','Labadie','Lalite','Lanham','Lansdowne','Laura','Leamington','Leeton','Lena','Leona','Leonora','Lexington','Lillian','Lillian','Limit','Limit ï North','Linden','Longridge','Longridge','Lookaway','Lookout','Lookout ï East','Lookout','Lotus','Lowry','Lucille','Magnolia','Makalu','Manchester','Manhattan','Maple','Margaretta','Marla','Martella','McArthur','McCausland','McCausland','McCausland','McPherson','Melvin','Millbrook','Mimika','Minerva','Minnie','Mitchell','Morganford','Murdoch','Nashville','Natural Bridge','Nellie','Newby','Noonan','Northcrest','Northwood','Norwich','Norwich','Nottingham','Odell','Olive','Oriole','Oxford','Palm','Pamplin','Park','Parkridge','Parkway','Parkway','Parkwood','Parkwood','Partridge','Pershing','Picadilly','Plateau','Plover','Poepping','Poepping','Pointview','Prange','Primm','Primm','Prospect Grove','Queen','Rabenberg','Rhodes','Richert','Ridge','River Run','Rivermont','Rivertrail','Rivertrail','Riverview','Riverview','Robin','Roosevelt','Rosebury','Rosedale','Rowan','Saloma','Saloma','San Bonita','Scranton','Second','Selber','Semple','Shepley','Sherry','Shulte','Siemers','Skinker (South)','Skinker (North)','Skinker (North)','Southpark','Southwest','Southwood','Spring Garden','St. Edward','St. James Sq.','St. Louis','Stanley','Stratford','Suburban','Suburban Terrace','Suburban Tracks1000ï 10','Summit','Susanview','Sutherland','Tennyson Sq.','Terry','Tesson','Tesson','Tesson','Tesson','Thekla','Thekla','Theodore','Theodore','Theodosia','Third','Thrush','Tremont','University','Unter Der Linden','Valley','Vernon','Veronica','Violaview','Vivian','Wabada','Waddell','Waddell','Waldemar','Wanda','Washington','Waterman','Weber','Weber','Weber','Weber','Weber','Webmore','Weil','Weimar','Wellington','Wells','West Florissant50ï 5899','West Florissant5900ï 6328','West Park','Westminster','Whitworth','William','Wilmar','Windham','Winton','Wise','Woodbourne','Woodland','Woodstock','Woodstock','Wren','Wydown','Zellie');
     $sms_body = $_REQUEST['Body'];
+    $sms_from = $_REQUEST['From'];
     $sms_body = strtolower($sms_body); 
 
     $text = removeCommonWords($sms_body);
@@ -66,15 +67,16 @@
     //echo "Message: " . $sms_body ."\n";
     //echo "Sentiment Class:" . $class ."\n";
     //echo "Sentiment Scores - Negative: " . $scores[neg] . " - Neutral: " . $scores[neu] . " - Positive: " . $scores[pos] . "\n";
+    
 
-    $em_message="Emergency Word: ".$emergencyWord.", Person Location: ". $addNumber ." ". $streetAdd . " Sentiment Scores - Negative: " . $scores[neg] . " - Neutral: " . $scores[neu] . " - Positive: " . $scores[pos];
+    $em_message="Emergency Word: ".$emergencyWord.", Person Location: ". $addNumber ." ". $streetAdd . " Sentiment Scores - Negative: " . $scores[neg] . " - Neutral: " . $scores[neu] . " - Positive: " . $scores[pos] . " - From: " .$sms_from;
 
     //Twillio send SMS to list of coordinators
     $client = new Client($AccountSid, $AuthToken);
-    $phone_f= 'Emergency System';
+    $phone_f = 'Emergency System';
     $people = array(
         //Ideally this should come from a database
-        "+15216142358740" => $phone_f;
+        "+526142358740" => $phone_f
     );
 
     foreach ($people as $number => $name) {
@@ -88,11 +90,16 @@
                 // the sms body
 
 
-                'body' => "Message from: Emergency System - Message: " + $em_message,
+                'body' => "Message from: Emergency System - Message: " . $em_message,
             )
         );
-        //echo "Thanks for contacting LocalSecretClub, we will get back to you, ".$name." as soon as possible";
     }
+
+    //Json output for Marc
+    $json_output= array("FromPhone" => $sms_body, "EmergencyWord" => $emergencyWord, "Location" => ($addNumber . " " . $streetAdd), 
+                        "Message" => $sms_body, "SentimentClass" => $class, "ScoresNegative"=> $scores[neg], "ScoresNeutral"=> $scores[neu], "ScoresPossitive"=>$scores[pos]);
+
+    $json_output=json_encode($json_output);
 
     // acknowledge the sender
     header("content-type: text/xml");
