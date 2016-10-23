@@ -19,6 +19,7 @@ Cura is an intelligent platform for emergency case, shelter management and pre-p
 ### Emergency Shelter Case Management:
 
 In case of extreme emergencies (weather or other) we provide facilities for people to send a regular SMS with a sentence to an emergency response number (406-530-1801). Our system will use Natural Language Processing (NLP) and Sentiment Analysis to parse the text message and identify three things: 
+
 1. The Urgency of the situation and provide a score, based on the analysis of the message
 2. The location provided by the person (street, or street and number) - we have added all streets in St. Louis for instant recognition
 3. The most relevant 'emergency' keyword
