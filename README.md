@@ -79,6 +79,7 @@ We learned more than we hopped about how the organizations fighting homelessness
 ## What's next for Cura
 Put the data captured into the system to use. There are many analytics and machine learning techniques that can be applied to a clean and concise dataset, which could provide useful insights and predictive or at least classification models. 
 
+#License
 
 All code here is released with a Simplified BSD License, any additional libraries and code has its respective licenses indicated and do not supersede the freedoms of the Simplified BSD License:
 
