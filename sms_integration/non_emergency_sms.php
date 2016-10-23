@@ -16,7 +16,7 @@
         return preg_replace('/\b('.implode('|',$commonWords).')\b/','',$input);
     }
 
-    $categories = array('veteran','adult','children','infant','family','Man','Woman','offender');
+    $categories = array('veteran','adult','children','infant','family','Man','Woman', 'male', 'female','youth','offender');
 
     $sms_body = $_REQUEST['Body'];
     $sms_from = $_REQUEST['From'];
