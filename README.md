@@ -40,7 +40,7 @@ A sample Shelter bed request SMS can be: **I am Female, Veteran and youth with 3
 
 ### Pre-prevention:
 
-Due to the very incomplete and sparse data with only true positive cases provided, we determined that a machine learning model for homlessness prediction is not feasible and an appropiate route to pursue. However we provide the next best thing: a questionarie to track people that might need help in the future. Our questionarie asks typical HUD questions as well as certain factors determined by Cohen in "Aging and Homelessness." **The Gerontologist** 39 (1999): 5–14. This voluntarily filled in questionarie will allow the organizations to keep track of who will need help in the future or is in the verge of losing their home. 
+Due to the very incomplete and sparse data with only true positive cases provided, we determined that a machine learning model for homelessness prediction is not feasible and an appropriate route to pursue. However we provide the next best thing: a questionnaire to track people that might need help in the future. Our questionnaire asks typical HUD questions as well as certain factors determined by Cohen in "Aging and Homelessness." **The Gerontologist** 39 (1999): 5–14. This voluntarily filled in questionnaire will allow the organizations to keep track of who will need help in the future or is in the verge of losing their home. 
 
 
 ## How we built it / Tech Stack:
@@ -65,7 +65,21 @@ Sentiment Analysis in PHP Via - phpInsight
 
 https://github.com/JWHennessey/phpInsight
 
-License - Simplified BSD License:
+## Challenges we ran into
+
+Being a very ambitious hackathon, the problem is quite a monumental task. With multiple and very diverse requirements not completely specified on paper, we managed to find two areas we think we could make the most impact. After attending the homelessness panel, discussing with some of the experts and constantly harassing the slack channel, we managed to narrow down to three problems. We would have loved to use the provided data, but being highly incomplete, very sparse and with only positive cases, any types of machine learning and modeling would be a disservice to the organizations. However, we managed to still use NLP and sentiment analysis techniques to provide highly functional systems to achieve multiple automated tasks. 
+
+## Accomplishments that we're proud of
+Tackling three of the biggest problems (prevention, emergency shelter services, and shelter assignments) we provided automated solutions for emergency shelter services and shelter assignment. We also provide a unique perspective for pre-prevention of people at risk by having a place to collect this information in a centralized environment.
+
+## What we learned
+We learned more than we hopped about how the organizations fighting homelessness operate and all the technical shortcomings they need to overcome. We also learned that even in a few days, non-obvious solutions can be produced to help.
+
+## What's next for Cura
+Put the data captured into the system to use. There are many analytics and machine learning techniques that can be applied to a clean and concise dataset, which could provide useful insights and predictive or at least classification models. 
+
+
+All code here is released with a Simplified BSD License, any additional libraries and code has its respective licenses indicated and do not supersede the freedoms of the Simplified BSD License:
 
 Copyright (c) 2016, Team Cura
 All rights reserved.
@@ -93,12 +107,3 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 The views and conclusions contained in the software and documentation are those
 of the authors and should not be interpreted as representing official policies,
 either expressed or implied, of the FreeBSD Project.
-
-## Challenges we ran into
-TOP SECRET
-## Accomplishments that we're proud of
-TOP SECRET
-## What we learned
-TOP SECRET
-## What's next for TOPSECRET
-TOP SECRET
