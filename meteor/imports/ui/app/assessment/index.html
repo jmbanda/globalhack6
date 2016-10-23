@@ -41,13 +41,13 @@
 						<div class="form-group" ng-class="{'has-error': form.income.$invalid}" ng-if="a.assessment.employed">
 							<label class="control-label col-sm-4">Income</label>
 							<div class="col-sm-8">
-								<input type="number" name="income" class="form-control" ng-model="a.assessment.income" required />
+								<input type="number" name="income" class="form-control" ng-model="a.assessment.income" step="0.01" required />
 							</div>
 						</div>
 						<div class="form-group" ng-class="{'has-error': form.expenses.$invalid}" ng-if="a.assessment.employed">
 							<label class="control-label col-sm-4">Expenses</label>
 							<div class="col-sm-8">
-								<input type="number" name="expenses" class="form-control" ng-model="a.assessment.expenses" required />
+								<input type="number" name="expenses" class="form-control" ng-model="a.assessment.expenses" step="0.01" required />
 							</div>
 						</div>
 						<div class="form-group" ng-class="{'has-error': form.family.$invalid}">

@@ -2,6 +2,9 @@ import angular from 'angular';
 
 import {Meteor} from 'meteor/meteor';
 
+import {Beds} from '/imports/api/beds';
+import {Programs} from '/imports/api/programs';
+
 import templateUrl from './index.html';
 import editorTemplate from './editor.html';
 
@@ -39,8 +42,50 @@ class EditorController {
 	constructor($scope, $reactive, $state, bed) {
 		$reactive(this).attach($scope);
 
+		this.subscribe('programs.selector');
+
 		this.$state = $state;
 		this.bed = bed;
+		this.yesNo = [{v: true, l: 'Yes'}, {v: false, l: 'No'}];
+
+		this.helpers({
+			programs() {
+				return Programs.find({}, {sort: {name: 1}});
+			}
+		});
+	}
+
+	save() {
+		this.loading = true;
+
+		const bed = angular.copy(this.bed);
+		delete bed._id;
+
+		if(this.bed._id) {
+			Beds.update(this.bed._id, {$set: bed}, err => {
+				this.loading = false;
+
+				if(err) {
+					return alert(err.reason || err.message);
+				}
+
+				alert('Bed saved');
+
+				this.$state.go('app.beds.index');
+			});
+		} else {
+			Beds.insert(bed, err => {
+				this.loading = false;
+
+				if(err) {
+					return alert(err.reason || err.message);
+				}
+
+				alert('Bed saved');
+
+				this.$state.go('app.beds.index');
+			});
+		}
 	}
 
 	cancel() {
@@ -65,6 +110,15 @@ angular.module(name, [])
 		controllerAs: 'bb',
 		templateUrl
 	})
+	.state('app.beds.new', {
+		url: '/new',
+		controller: ['$scope', '$reactive', '$state', 'bed', EditorController],
+		controllerAs: 'b',
+		templateUrl: editorTemplate,
+		resolve: {
+			bed: () => ({})
+		}
+	})
 	.state('app.beds.edit', {
 		url: '/:_id',
 		controller: ['$scope', '$reactive', '$state', 'bed', EditorController],
@@ -85,5 +139,5 @@ angular.module(name, [])
 				return deferred.promise;
 			}]
 		}
-	})
+	});
 }]);

@@ -2,24 +2,20 @@
 	<div class="col-sm-12">
 		<h1 class="page-header">
 			Beds
+
+			<a ui-sref="app.beds.new" class="btn btn-primary pull-right" uib-tooltip="Create Bed">
+				<i class="fa fa-plus"></i>
+			</a>
 		</h1>
 	</div>
 </div>
 
 <div class="row">
-	<div class="col-lg-12" style="margin-bottom: 20px">
-		<form class="input-group pull-right" style="width: 200px" ng-submit="bb.search()">
-			<input type="text" ng-model="bb.options.filter" class="form-control" placeholder="Search..." />
-			<span class="input-group-btn">
-				<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-			</span>
-		</form>
-	</div>
 	<div class="col-lg-12">
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
 				<tr>
-					<th>ID</th>
+					<th>Identifier</th>
 					<th>Program</th>
 					<th>Availability</th>
 					<th>&nbsp;</th>
@@ -27,14 +23,14 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="bed in bb.beds">
-					<td>{{bed._id}}</td>
+					<td>{{bed.name}}</td>
 					<td>{{bed.program}}</td>
 					<td>
 						{{bed.status}}
 						<span ng-if="bed.status=='Occupied'">until {{bed.availableDate | date: 'MM/dd/yyyy'}}</span>
 					</td>
 					<td>
-						<a class="btn btn-xs btn-primary" ui-sref="app.programs.edit(program)">
+						<a class="btn btn-xs btn-primary" ui-sref="app.beds.edit(bed)">
 							<i class="fa fa-pencil"></i>
 						</a>
 					</td>
@@ -42,7 +38,7 @@
 			</tbody>
 		</table>
 		<div class="panel-body">
-			<ul uib-pagination total-items="bb.total" ng-model="bb.options.page" max-size="5" class="pagination-sm pull-right" boundary-links="true"></ul>
+			<ul uib-pagination total-items="bb.total" ng-model="bb.options.page" max-size="5" items-per-page="5" class="pagination-sm pull-right" boundary-links="true"></ul>
 		</div>
 	</div>
 </div>

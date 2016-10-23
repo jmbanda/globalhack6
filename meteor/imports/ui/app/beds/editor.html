@@ -1,0 +1,73 @@
+<div class="row">
+	<div class="col-sm-12">
+		<h1 class="page-header">{{b.bed._id? 'Edit':'Create'}} bed</h1>
+	</div>
+</div>
+<div ng-form="form">
+	<div class="row">
+		<div class="from-group col-md-3" ng-class="{'has-error': form.name.$invalid}">
+			<label class="control-label">Bed identifier</label>
+			<input type="text" name="name" class="form-control" ng-model="b.bed.name" required autofocus />
+		</div>
+		<div class="from-group col-md-3" ng-class="{'has-error': form.program.$invalid}">
+			<label class="control-label">Program</label>
+			<select name="program" class="form-control" ng-model="b.bed.programId" ng-options="p._id as p.name for p in b.programs"></select>
+		</div>
+		<div class="form-group col-md-3" ng-class="{'has-error': form.status.$invalid}">
+			<label class="control-label">Status</label>
+			<select name="status" class="form-control" ng-model="b.bed.status" required>
+				<option>Occupied</option>
+				<option>Available</option>
+			</select>
+		</div>
+		<div class="form-group col-md-3" ng-class="{'has-error': form.availableDate.$invalid}" ng-if="b.bed.status=='Occupied'">
+			<label class="control-label">Available date</label>
+			<input type="date" name="availableDate" class="form-control" ng-model="b.bed.availableDate" required />
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-md-3">
+			<label class="control-label">Veteran only</label>
+			<select name="veteranOnly" class="form-control" ng-model="b.bed.veteranOnly" ng-options="o.v as o.l for o in b.yesNo"></select>
+		</div>
+		<div class="form-group col-md-3">
+			<label class="control-label">Adult only</label>
+			<select name="adultOnly" class="form-control" ng-model="b.bed.adultOnly" ng-options="o.v as o.l for o in b.yesNo"></select>
+		</div>
+		<div class="form-group col-md-3">
+			<label class="control-label">Children only</label>
+			<select name="childrenOnly" class="form-control" ng-model="b.bed.childrenOnly" ng-options="o.v as o.l for o in b.yesNo"></select>
+		</div>
+		<div class="form-group col-md-3">
+			<label class="control-label">Infant only</label>
+			<select name="infantOnly" class="form-control" ng-model="b.bed.infantOnly" ng-options="o.v as o.l for o in b.yesNo"></select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-md-3">
+			<label class="control-label">Full family</label>
+			<select name="fullFamily" class="form-control" ng-model="b.bed.fullFamily" ng-options="o.v as o.l for o in b.yesNo"></select>
+		</div>
+		<div class="form-group col-md-3">
+			<label class="control-label">Single man</label>
+			<select name="singleMan" class="form-control" ng-model="b.bed.singleMan" ng-options="o.v as o.l for o in b.yesNo"></select>
+		</div>
+		<div class="form-group col-md-3">
+			<label class="control-label">Single woman</label>
+			<select name="singleWoman" class="form-control" ng-model="b.bed.singleWoman" ng-options="o.v as o.l for o in b.yesNo"></select>
+		</div>
+		<div class="form-group col-md-3">
+			<label class="control-label">Sex offender</label>
+			<select name="sexOffender" class="form-control" ng-model="b.bed.sexOffender" ng-options="o.v as o.l for o in b.yesNo"></select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-md-12 text-right" ng-hide="b.loading">
+			<button type="button" class="btn btn-primary" ng-disabled="form.$invalid" ng-click="b.save()">Save</button>
+			<a class="btn btn-default" ng-click="b.cancel()">Cancel</a>
+		</div>
+		<div class="form-group col-md-12 text-center" ng-show="b.loading">
+			Loading <i class="fa fa-spin fa-spinner"></i>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,62 @@
+<div class="row">
+	<div class="col-sm-12">
+		<h1 class="page-header">
+			Review assessment
+		</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="form-group col-sm-4">
+		<label class="control-label">First name</label>
+		<div class="form-control">{{a.assessment.firstName}}</div>
+	</div>
+	<div class="form-group col-sm-4">
+		<label class="control-label">Middle name</label>
+		<div class="form-control">{{a.assessment.middleName}}</div>
+	</div>
+	<div class="form-group col-sm-4">
+		<label class="control-label">Last name</label>
+		<div class="form-control">{{a.assessment.lastName}}</div>
+	</div>
+</div>
+<div class="row">
+	<div class="form-group col-sm-4">
+		<label class="control-label">SSN</label>
+		<div class="form-control">{{a.assessment.ssn}}</div>
+	</div>
+	<div class="form-group col-sm-4">
+		<label class="control-label">Date of birth</label>
+		<div class="form-control">{{a.assessment.dateOfBirth | date: 'MM/dd/yyyy h:mm a'}}</div>
+	</div>
+	<div class="form-group col-sm-4">
+		<label class="control-label">Education level</label>
+		<div class="form-control">{{a.assessment.educationLevel}}</div>
+	</div>
+</div>
+<div class="row">
+	<div class="form-group col-sm-4">
+		<label class="control-label">Currently employed?</label>
+		<div class="form-control">{{a.assessment.employed? 'Yes':'No'}}</div>
+	</div>
+	<div class="form-group col-sm-4" ng-if="a.assessment.employed">
+		<label class="control-label">Income</label>
+		<div class="form-control">{{a.assessment.income | currency}}</div>
+	</div>
+	<div class="form-group col-sm-4" ng-if="a.assessment.employed">
+		<label class="control-label">Expenses</label>
+		<div class="form-control">{{a.assessment.expenses | currency}}</div>
+	</div>
+</div>
+<div class="row">
+	<div class="form-group col-sm-4">
+		<label class="control-label">Is a family?</label>
+		<div class="form-control">{{a.assessment.family? 'Yes':'No'}}</div>
+	</div>
+	<div class="form-group col-sm-4" ng-if="a.assessment.family">
+		<label class="control-label">Family members</label>
+		<div class="form-control">{{a.assessment.familyMembers}}</div>
+	</div>
+</div>
+<div class="row">
+	<div class="form-control col-sm-12">{{a.assessment.message}}</div>
+</div>

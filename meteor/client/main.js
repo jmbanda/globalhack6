@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '/imports/ui/sb-admin-2.css';
 import '/imports/ui/notify-me.css';
 import 'font-awesome/css/font-awesome.css';
-import '/imports/ui/app/styles/master.css'
+import '/imports/ui/styles/master.css'
 
 import {Meteor} from 'meteor/meteor';
 

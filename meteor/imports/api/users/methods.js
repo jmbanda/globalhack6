@@ -5,8 +5,8 @@ Meteor.methods({
 		const searchQuery = {$regex: '.*' + (params.filter || '') + '.*', $options: 'i'},
 			query = {},
 			options = {
-				limit: 10,
-				skip: (Number(params.page) - 1) * 10,
+				limit: 5,
+				skip: (Number(params.page) - 1) * 5,
 				fields: {services: 0}
 			};
 

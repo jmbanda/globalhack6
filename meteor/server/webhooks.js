@@ -17,6 +17,7 @@ WebApp.connectHandlers.use('/webhook', function(req, res, next) {
 			client = Clients.findOne({phoneNumber: message.number}, {fields: {firstName: 1, lastName: 1}});
 
 		message.date = new Date();
+		message.status = 'Created';
 
 		if(client) {
 			message.client = {_id: client._id, name: client.firstName + ' ' + client.lastName};

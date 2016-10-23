@@ -3,3 +3,22 @@
 		<h1 class="page-header">Dashboard</h1>
 	</div>
 </div>
+
+<div class="row">
+	<div class="col-sm-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">Emergency requests per hour</div>
+			<div class="panel-body">
+				<canvas id="bar" class="chart chart-bar" chart-data="d.data1" chart-labels="d.labels1"></canvas>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">Emergency request sentiment</div>
+			<div class="panel-body">
+			<canvas id="area" class="chart chart-pie" chart-data="d.data2" chart-labels="d.labels2"></canvas>
+			</div>
+		</div>
+	</div>
+</div>

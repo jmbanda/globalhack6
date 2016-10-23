@@ -23,7 +23,7 @@
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
 				<tr>
-					<th>SSN</th>
+					<th>ID</th>
 					<th>First Name</th>
 					<th>Middle Name</th>
 					<th>Last Name</th>
@@ -32,7 +32,7 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="client in cc.clients">
-					<td>{{client.ssn}}</td>
+					<td>{{client._id}}</td>
 					<td>{{client.firstName}}</td>
 					<td>{{client.middleName}}</td>
 					<td>{{client.lastName}}</td>
@@ -48,7 +48,7 @@
 			</tbody>
 		</table>
 		<div class="panel-body">
-			<ul uib-pagination total-items="cc.total" ng-model="cc.options.page" max-size="5" class="pagination-sm pull-right" boundary-links="true"></ul>
+			<ul uib-pagination total-items="cc.total" ng-model="cc.options.page" max-size="5" items-per-page="5" class="pagination-sm pull-right" boundary-links="true"></ul>
 		</div>
 	</div>
 </div>

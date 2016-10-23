@@ -6,10 +6,13 @@ import 'angular-ui-bootstrap';
 import 'angular-password';
 import 'angular-simple-logger';
 import 'angular-google-maps';
+import 'chart.js';
+import 'angular-chart.js';
 
 import Filters from '../filters';
 import Login from './login';
 import Assessment from './assessment';
+import Assessments from './assessments';
 import Navigation from './navigation';
 import Dashboard from './dashboard';
 import Beds from './beds';
@@ -31,12 +34,14 @@ angular.module(name, [
 	, 'ui.bootstrap'
 	, 'ngPassword'
 	, 'uiGmapgoogle-maps'
+	, 'chart.js'
 	, Filters
 	, Login
 	, Assessment
 	, Navigation
 	, Dashboard
 	, Beds
+	, Assessments
 	, Clients
 	, HotlineEmergencies
 	, Programs
