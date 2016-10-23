@@ -42,7 +42,7 @@ A sample Shelter bed request SMS can be: **I am Female, Veteran and youth with 3
 
 Webapp developed using:
 
-[Meteor](https://www.meteor.com/) ![alt text](http://www.jmbanda.com/Meteor.png)
+[![alt text](http://www.jmbanda.com/Meteor.png)](https://www.meteor.com/)
 
 
 Angular
