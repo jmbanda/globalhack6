@@ -46,6 +46,8 @@ Due to the very incomplete and sparse data with only true positive cases provide
 
 ## How we built it / Tech Stack:
 
+Best viewed in Google Chrome
+
 Webapp developed using:
 
 [![alt text](http://www.jmbanda.com/meteor-logo.png)](https://www.meteor.com/) 
