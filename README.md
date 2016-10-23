@@ -43,14 +43,12 @@ A sample Shelter bed request SMS can be: **I am Female, Veteran and youth with 3
 Webapp developed using:
 
 [![alt text](http://www.jmbanda.com/Meteor.png)](https://www.meteor.com/)
+[![alt text](http://www.jmbanda.com/angular_js.png)](https://angularjs.org/)
+[![alt text](http://www.jmbanda.com/mongodb.png)](https://www.mongodb.com/)
 
-
-Angular
-
-MongoDB
-
-Web styling - SASS - Syntactically Awesome Style Sheets compiled by Koala 
-https://github.com/oklai/koala
+Web styling:
+[![alt text](http://www.jmbanda.com/sass.png)](http://sass-lang.com/)
+[![alt text](http://www.jmbanda.com/koala.png)](https://github.com/oklai/koala)
 
 Natural Language Processing in PHP via - PHP Nlp Tools
 https://github.com/angeloskath/php-nlp-tools/
