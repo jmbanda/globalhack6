@@ -12,7 +12,7 @@
 
 
 
-### How it works:
+## How it works:
 
 Emergency Shelter Case Management:
 
@@ -38,11 +38,12 @@ A sample Shelter bed request SMS can be: **I am Female, Veteran and youth with 3
 
 
 
-Stack:
+## Stack:
 
-Webapp:
+Webapp developed using:
 
-Meteor
+[Meteor](https://www.meteor.com/) ![alt text](http://www.jmbanda.com/meteor.png "Meteor")
+
 
 Angular
 
